@@ -197,38 +197,38 @@ exports.getOne = (Model, options) =>
       return next(new AppError('No item found with that ID', 404));
     }
 
-    if (Model == Item) {
-      if (req.user.id != doc.Owner._id) {
-        return next(
-          new AppError(
-            'You do not have permission to perform this action, Only for the owner of this item',
-            401
-          )
-        );
-      }
-    }
+    // if (Model == Item) {
+    //   if (req.user.id != doc.Owner._id) {
+    //     return next(
+    //       new AppError(
+    //         'You do not have permission to perform this action, Only for the owner of this item',
+    //         401
+    //       )
+    //     );
+    //   }
+    // }
 
-    if (Model == Review) {
-      if (req.user.id != doc.user.id) {
-        return next(
-          new AppError(
-            'You do not have permission to perform this action, Only for the owner of this item',
-            401
-          )
-        );
-      }
-    }
+    // if (Model == Review) {
+    //   if (req.user.id != doc.user.id) {
+    //     return next(
+    //       new AppError(
+    //         'You do not have permission to perform this action, Only for the owner of this item',
+    //         401
+    //       )
+    //     );
+    //   }
+    // }
 
-    if (Model == Booking) {
-      if (req.user.id != doc.user.id) {
-        return next(
-          new AppError(
-            'You do not have permission to perform this action, Only for the owner of this item',
-            401
-          )
-        );
-      }
-    }
+    // if (Model == Booking) {
+    //   if (req.user.id != doc.user.id) {
+    //     return next(
+    //       new AppError(
+    //         'You do not have permission to perform this action, Only for the owner of this item',
+    //         401
+    //       )
+    //     );
+    //   }
+    // }
 
     res.status(200).json({
       status: 'success',
